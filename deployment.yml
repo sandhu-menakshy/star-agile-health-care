@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: star-healthcare
+  name: medicure
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: star-healthcare
+      app: medicure
   template:
     metadata:
       labels:
-        app: star-healthcare
+        app: medicure
     spec:
       containers:
-        - name: star-healthcare-container
+        - name: medicure-container
           image: nmenakshy199/medicure-project:latest
           ports:
             - containerPort: 8082
@@ -24,10 +24,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: star-healthcare-service
+  name: medicure-service
 spec:
   selector:
-    app: star-healthcare
+    app: medicure
   ports:
     - protocol: TCP
       port: 80
