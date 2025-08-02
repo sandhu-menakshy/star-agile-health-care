@@ -8,19 +8,19 @@ spec:
   selector:
     matchLabels:
       app: medicure
-   template:
-     metadata:
-       labels:
-         app: medicure
-     spec:
-       containers:
-         - name: medicure
-           image: nmenakshy199/medicure-project:latest
-           ports:
-             - containerPort: 8082
-           env:
-             - name: PORT
-               value: "8082"
+  template:  
+    metadata:
+      labels:
+        app: medicure
+    spec:
+      containers:
+        - name: medicure
+          image: nmenakshy199/medicure-project:latest
+          ports:
+            - containerPort: 8082
+          env:
+            - name: PORT
+              value: "8082"
 
 ---
 apiVersion: v1
